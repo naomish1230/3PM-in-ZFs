@@ -3,7 +3,8 @@
 %current 2p data as of 7/27/23 is from pink61, night2, full z-stack (1st)
 %current 3p data as of 7/27/23 is from blue56L, s1, 8 depths recorded (not stacks)
 %caveat as of 7/27/23... 3p data is 2X avg, 2p is 2X avg. 
-%the 8 depths for 3p data are as follows: 150, 300, 400, 500, 600, 650,700,750
+%the 8 depths for 3p data are as follows (7/27/23):
+depths3p = [150, 300, 400, 500, 600, 650,700,750]; 
 
 %to save new pixel value data, in Fiji, open Edit>Selection>SelectAll and
 %then Analyze>Tools>SaveasXYCoordinates and it will save as a csv file.
@@ -42,3 +43,11 @@ for slice = 1:thrpsize(3)
     end
     depthcorr3p(slice) = mean(rowcorr);
 end
+
+figure()
+set(gca,'FontSize',16), set(gcf,'color','w');
+plot(depths3p,depthcorr3p,'LineWidth',2,'Color','g')
+hold on
+plot(depths3p(1):twopsize(3),depthcorr2p(depths3p(1):end),'LineWidth',2,'Color','r')
+legend('3PM','2PM')
+xlabel('Depth (um)')
