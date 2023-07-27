@@ -45,9 +45,11 @@ for slice = 1:thrpsize(3)
 end
 
 figure()
-set(gca,'FontSize',16), set(gcf,'color','w');
 plot(depths3p,depthcorr3p,'LineWidth',2,'Color','g')
 hold on
 plot(depths3p(1):twopsize(3),depthcorr2p(depths3p(1):end),'LineWidth',2,'Color','r')
 legend('3PM','2PM')
 xlabel('Depth (um)')
+ylabel('Pearson Correlation Coefficient')
+title('Average Horizontal Adjacent Pixel Correlation')
+set(gca,'FontSize',16), set(gcf,'color','w');
