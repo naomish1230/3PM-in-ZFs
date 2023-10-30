@@ -2,16 +2,16 @@
 
 clear
 %first, add paths and load in data
-addpath /Users/naomishvedov/Documents/GitHub/3PM-in-ZFs/Poster-data/ScatteringMeasurements/
-cd /Users/naomishvedov/Documents/GitHub/3PM-in-ZFs/Poster-data/ScatteringMeasurements/
-load('P2hvc.mat'); load('P2out.mat'); load('P3hvc.mat'); load('P3outb.mat')
+addpath C:/Users/naomish/Documents/GitHub/3PM-in-ZFs/Poster-data/ScatteringMeasurements/
+cd C:/Users/naomish/Documents/GitHub/3PM-in-ZFs/Poster-data/ScatteringMeasurements/
+load('P2hvcb.mat'); load('P2out.mat'); load('P3hvc.mat'); load('P3outb.mat')
 
 %% 2P data
 % Define the function to fit (f(x) = a * exp(-2x/b) + c)
 func = @(params, x) params(1) * exp(-2 * x / params(2)) + params(3);
 
-y_data= P2hvc.Int(50:end); %truncated because only computing below VZ
-x_data = P2hvc.Microns(50:end);
+y_data= P2hvcb.Int(50:end); %truncated because only computing below VZ
+x_data = P2hvcb.Microns(50:end);
 
 y2_data = P2out.Int(50:end);
 x2_data = P2out.Microns(50:end);
@@ -59,7 +59,7 @@ title('Estimated Attenuation Length');
 
 %% 3P DATA
 
-clearvars -except P3hvc P3out P2hvc P2out fig P3outb
+clearvars -except P3hvc fig P3outb P2hvcb P2out
 
 % Define the function to fit (f(x) = a * exp(-3x/b) + c)
 func = @(params, x) params(1) * exp(-3 * x / params(2)) + params(3);
