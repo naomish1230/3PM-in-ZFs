@@ -51,7 +51,7 @@ y2_fit = func2(params2, x2_data);
 plot(x2_data, y2_fit, 'Color', [1, 0, 0], 'DisplayName', ['EAL: ' num2str(b2)]);
 
 xlabel('Depth (microns)');
-ylabel('Mean Intensity');
+ylabel('Mean Intensity (a.u.)');
 title('Estimated Attenuation Length');
 legend;%('2P HVC','2P Out',['EAL: ' num2str(b)], ['EAL: ' num2str(b2)]);
 set(gca,'FontSize',16), set(gcf,'color','w');
