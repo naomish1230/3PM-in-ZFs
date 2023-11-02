@@ -39,16 +39,16 @@ c2 = params2(3);
 
 % Plot the data and the curve fit
 fig = figure(1);
-plot(x_data, y_data, 'o', 'Color',[1, 0, 0],'DisplayName', '2P');
+plot(x_data, y_data, 'o', 'Color',[0, 0, 0.3],'DisplayName', '2P Data');
 hold on;
 % Generate curve fit using optimized parameters
 y_fit = func(params, x_data);
-plot(x_data, y_fit, 'Color',[1, 0, 0], 'DisplayName', ['EAL: ' num2str(b)]);
+plot(x_data, y_fit, 'Color',[0, 0, 0.3], 'DisplayName', '2P Curve Fit');%['EAL: ' num2str(b)]);
 
 %plot other data and fit
-plot(x2_data, y2_data, 'o', 'Color', [0.631, 0.133, 0.055],'DisplayName', '3P');
+plot(x2_data, y2_data, 'o', 'Color', [1, 0, 0],'DisplayName', '3P Data');
 y2_fit = func2(params2, x2_data);
-plot(x2_data, y2_fit, 'Color', [0.631, 0.133, 0.055], 'DisplayName', ['EAL: ' num2str(b2)]);
+plot(x2_data, y2_fit, 'Color', [1, 0, 0], 'DisplayName', '3P Curve Fit');%['EAL: ' num2str(b2)]);
 
 xlabel('Depth (microns)');
 ylabel('Mean Intensity (a.u.)');
@@ -61,5 +61,6 @@ hold off
 % disp(['a = ', num2str(a)]);
 % disp(['b = ', num2str(b)]);
 % disp(['c = ', num2str(c)]);
-
+disp(['2P EAL: ' num2str(b)])
+disp(['3P EAL: ' num2str(b2)])
 
