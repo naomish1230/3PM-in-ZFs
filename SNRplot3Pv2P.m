@@ -3,8 +3,8 @@
 
 clear
 %load in data
-load('/Users/naomishvedov/Documents/GitHub/3PM-in-ZFs/Poster-data/SBRmeasurements/SNR_2p.mat');
-load('/Users/naomishvedov/Documents/GitHub/3PM-in-ZFs/Poster-data/SBRmeasurements/SNR_3p.mat');
+load('/Users/naomishvedov/Documents/GitHub/3PM-in-ZFs/Poster-data/SBRmeasurements-Jack/SNR_2p.mat');
+load('/Users/naomishvedov/Documents/GitHub/3PM-in-ZFs/Poster-data/SBRmeasurements-Jack/SNR_3pv2.mat');
 
 
 figure(1)
@@ -13,12 +13,12 @@ set(gcf,'color','w'),set(gca,'FontSize',16)
 xlabel('Depth (um)')
 ylabel('Signal-To-Background (a.u.)')
 title('2PM SBR');
-ylim([1 14])
+ylim([1 8])
 
 figure(2)
-plot(SNR_3p.VarName1*100,SNR_3p.CellToBR,'LineWidth',2,'Color','r')
+plot(SNR_3pv2.VarName1*100,SNR_3pv2.CellToBR,'LineWidth',2,'Color','r')
 set(gcf,'color','w'),set(gca,'FontSize',16)
 xlabel('Depth (um)')
 ylabel('Signal-To-Background (a.u.)')
 title('3PM SBR');
-ylim([1 14])
+ylim([1 8])
