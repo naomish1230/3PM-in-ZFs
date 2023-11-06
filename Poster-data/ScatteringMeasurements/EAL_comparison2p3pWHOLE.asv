@@ -184,15 +184,15 @@ disp(['3P EAL: ' num2str(b2)])
 
 % Plot the data and the curve fit
 fig = figure(4);
-loglog(x_data, rescale(y_data,0,max(y2_data)), 'o', 'Color',[0, 0, 0.3],'DisplayName', '2P Data');
+loglog(x_data, y_data, 'o', 'Color',[0, 0, 0.3],'DisplayName', '2P Data');
 hold on;
 % Generate curve fit using optimized parameters
 y_fit = func(params, x_data);
-loglog(x_data,rescale(y_fit,0,max(y2_data)), 'Color',[0, 0, 0.3], 'DisplayName', '2P Curve Fit');%['EAL: ' num2str(b)]);
+loglog(x_data,y_fit, 'Color',[0, 0, 0.3], 'DisplayName', '2P Curve Fit');%['EAL: ' num2str(b)]);
 %plot other data and fit
-loglog(x2_data, rescale(y2_data,0,max(y2_data)), 'o', 'Color', [1, 0, 0],'DisplayName', '3P Data');
+loglog(x2_data, y2_data, 'o', 'Color', [1, 0, 0],'DisplayName', '3P Data');
 y2_fit = func2(params2, x2_data);
-loglog(x2_data, rescale(y2_fit,0,max(y2_data)), 'Color', [1, 0, 0], 'DisplayName', '3P Curve Fit');%['EAL: ' num2str(b2)]);
+loglog(x2_data, y2_fit, 'Color', [1, 0, 0], 'DisplayName', '3P Curve Fit');%['EAL: ' num2str(b2)]);
 xlabel('Log Depth (microns)');
 ylabel('Log Mean Intensity (a.u.)');
 title('Estimated Attenuation Length');
