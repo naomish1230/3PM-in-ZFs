@@ -12,13 +12,8 @@ plot(SNR_2p.VarName1*100,SNR_2p.CellToBR,'LineWidth',2,'Color',[0,0,0.3])
 set(gcf,'color','w'),set(gca,'FontSize',16)
 xlabel('Depth (um)')
 ylabel('Signal-To-Background (a.u.)')
-title('2PM SBR');
 ylim([1 8])
-
-figure(2)
+hold on
 plot(SNR_3pv2.VarName1*100,SNR_3pv2.CellToBR,'LineWidth',2,'Color','r')
-set(gcf,'color','w'),set(gca,'FontSize',16)
-xlabel('Depth (um)')
-ylabel('Signal-To-Background (a.u.)')
-title('3PM SBR');
-ylim([1 8])
+title('SBR');
+legend('2PM','3PM')
